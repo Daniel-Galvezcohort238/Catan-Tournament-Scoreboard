@@ -17,7 +17,7 @@
 
 .yellow-title{
     position: absolute;
-    margin-left: 36%;
+    margin-left: 32%;
 
 
     color: #ffea48;
@@ -26,6 +26,8 @@
     border-style: outset;
     border-color:rgb(237, 66, 36);
     border-width: 5px;
+
+    font-size: 5.5rem;
 }
 
 
@@ -63,24 +65,24 @@
     justify-content: center;
 
 
-    margin-top: 55px;
+    margin-top: 7rem;
 }
 
 
 .table-name {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 900;
-    width: 190px;
+    width: 16rem;
 
 
-    margin-left: 5rem;
+    margin-left: 10rem;
 }
 
 
 .actual-table {
     background-color: rgb(237, 237, 237);
-    width: 300px;
-    height: 200px;
+    width: 570px;
+    height: 400px;
 
 
     border-style: solid;
@@ -94,7 +96,7 @@
     padding-right: 10px;
 
 
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: bold;
 }
 
@@ -115,7 +117,7 @@
 
 
     color: #704d15;
-    font-size: 80px;
+    font-size: 8rem;
 
 
     background-color: rgba(250, 235, 107, 0.85);
@@ -124,17 +126,18 @@
     border-width: 5px;
 
 
-    padding: 5px;
+    padding-right: 1rem;
+    
 }
 
 
 #timer {
     position: absolute;
-    margin-left: 10%;
+    margin-left: 8%;
 
 
     color: #704d1564;
-    font-size: 80px;
+    font-size: 8rem;
 
 
     background-color: rgba(230, 211, 36, 0.359);
@@ -143,17 +146,16 @@
     border-width: 5px;
 
 
-    padding: 5px;
 }
 
 
 #add-input {
     position: absolute;
-    margin-left: 67%;
+    margin-left: 69%;
 
 
     color: #000000;
-    font-size: 40px;
+    font-size: 5rem;
 
 
     background-color: rgb(192, 192, 192);
@@ -163,17 +165,17 @@
 
 
     padding: 5px;
-    width:27%;
+    width:20%;
 }
 
 
 #add-btn {
     position: absolute;
-    margin-left: 94%;
+    margin-left: 89.2%;
 
 
     color: #000000;
-    font-size: 40px;
+    font-size: 5rem;
 
 
     background-color: rgb(122, 122, 122);

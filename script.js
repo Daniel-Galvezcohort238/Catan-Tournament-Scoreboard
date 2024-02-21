@@ -57,6 +57,12 @@ class Tournament {
         
             if (this._openTable % 3 == 0) {
                 this._columnsTables[0]++;
+
+                if (this._columnsTables[0] >= 6) {
+                    document.querySelector('.center-format').style.justifyContent = 'flex-start';
+                } else {
+                    document.querySelector('.center-format').style.justifyContent = 'center';
+                }
             }
         
             if(this._columnsTables[1].length < 18) {
@@ -85,7 +91,7 @@ class Tournament {
     
     
             let newScoreInput = document.createElement('input'); newScoreInput.className = 'score-input';
-            newScoreInput.style.width = '3rem'; newScoreInput.style.fontSize = '30px'; newScoreInput.name = 'score-input';
+            newScoreInput.style.width = '3rem'; newScoreInput.style.fontSize = '3rem'; newScoreInput.name = 'score-input';
             let editBtn = document.createElement('button'); editBtn.className = 'fa-solid fa-pen';
             let editDiv = document.createElement('div'); editDiv.appendChild(newScoreInput); editDiv.appendChild(editBtn);
     
@@ -124,23 +130,26 @@ class Tournament {
     removePlayer(e) {
         const clickedElement = e.target;
     
-            for (let i = 0 ; i < this._playersList.length; i++) {
-                if (this._playersList[i].playerName == clickedElement.nextSibling.value) {
-                     this._playersList.splice(i, 1);
-                }                
-            }
+        for (let i = 0 ; i < this._playersList.length; i++) {
+            console.log(this._playersList[i].playerName)
+            if (this._playersList[i].playerName == clickedElement.nextSibling.nodeValue) {
+                console.log(this._playersList[i]);                    
+                this._playersList.splice(i, 1);
+                console.log(this._playersList);
+            }                
+        }
 
         const tableList = this._columnsTables[1];
-            for (let i = 0; i < tableList.length; i++) {
-                for (let j = 0; j < tableList[i].players.length; j++) {
-                    if (tableList[i].players[j].playerName == clickedElement.nextSibling.nodeValue) {   //not working
-                        tableList[i].players.splice(j, 1);
-                        break;
-                    }
-
+        for (let i = 0; i < tableList.length; i++) {
+            for (let j = 0; j < tableList[i].players.length; j++) {
+                if (tableList[i].players[j].playerName == clickedElement.nextSibling.nodeValue) {   //not working
+                    tableList[i].players.splice(j, 1);
+                    break;
                 }
             }
+        }
 
+        console.log(clickedElement.parentElement.parentElement);
         clickedElement.parentElement.parentElement.remove();
 
         
@@ -270,8 +279,6 @@ class Table {
         gameTableEle.id = `table${tournament._columnsTables[1]}`; gameTableEle.appendChild(tableName); 
         gameTableEle.appendChild(this._actualTableEle);
     
-        console.log(tournament._columnsTables[0]);
-        console.log(document.getElementById(`column${tournament._columnsTables[0]}`));
         document.getElementById(`column${tournament._columnsTables[0]}`).appendChild(gameTableEle);
          
     }
